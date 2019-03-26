@@ -20,12 +20,6 @@ const SideDrawer = props => {
             <div
                 className={attachedClasses.join(' ')}
             >
-                <button
-                    className={classes.Button}
-                    onClick={props.closed}
-                >
-                    Close
-                </button>
                 <div
                     className={classes.Logo}
                 >
