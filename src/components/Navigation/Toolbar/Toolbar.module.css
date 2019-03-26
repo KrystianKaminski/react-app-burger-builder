@@ -21,8 +21,30 @@
     height: 80%;
 }
 
+.Button {
+    display: none;
+}
+
 @media (max-width: 499px) {
     .DesktopOnly {
         display: none;
+    }
+
+    .Button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 25%;
+        max-width: 100px;
+        display: block;
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    .Button:hover {
+        background-color: orangered;
     }
 }

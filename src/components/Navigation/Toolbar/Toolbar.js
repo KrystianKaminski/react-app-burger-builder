@@ -8,7 +8,12 @@ const Toolbar = props => (
     <header
         className={classes.Toolbar}
     >
-        <div>MENU</div>
+        <button
+            className={classes.Button}
+            onClick={props.clicked}
+        >
+            Menu
+        </button>
         <div
             className={classes.Logo}
         >
