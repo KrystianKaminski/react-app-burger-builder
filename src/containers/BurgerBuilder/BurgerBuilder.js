@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Aux from '../../hoc/Aux/Aux'
 import Burger from '../../components/Burger/Burger'
@@ -125,7 +126,15 @@ class BurgerBuilder extends React.Component {
         //             purchasing: false
         //         })
         //     })
-        this.props.history.push('/checkout')
+        const queryParams = []
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
+        }
+        const queryString = queryParams.join('&')
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        })
     }
 
     render() {
@@ -156,12 +165,14 @@ class BurgerBuilder extends React.Component {
                     />
                 </Aux >
             )
-            orderSummary = <OrderSummary
-                ingredients={this.state.ingredients}
-                price={this.state.totalPrice}
-                purchaseCancelled={this.purchaseCancelHandler}
-                purchaseContinued={this.purchaseContinueHandler}
-            />
+            orderSummary = (
+                <OrderSummary
+                    ingredients={this.state.ingredients}
+                    price={this.state.totalPrice}
+                    purchaseCancelled={this.purchaseCancelHandler}
+                    purchaseContinued={this.purchaseContinueHandler}
+                />
+            )
         }
         if (this.state.loading) {
             orderSummary = <Spinner />
