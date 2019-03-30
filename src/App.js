@@ -13,7 +13,7 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route path="/" exact component={BurgerBuilder}></Route>
-              <Route path="/checkout" exact component={Checkout}></Route>
+              <Route path="/checkout" component={Checkout}></Route>
             </Switch>
           </Layout>
         </div>
