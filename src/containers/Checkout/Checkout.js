@@ -18,11 +18,12 @@ class Checkout extends Component {
         for (let param of query.entries()) {
             if (param[0] === 'price') {
                 price = param[1]
+
             } else {
                 ingredients[param[0]] = +param[1]
             }
         }
-        this.setState({ ingredients: ingredients, totalPrice: price })
+        this.setState({ ingredients: ingredients, price: price })
     }
 
     checkoutCancelledHandler = () => {
