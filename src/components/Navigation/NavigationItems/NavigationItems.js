@@ -22,6 +22,11 @@ const NavigationItems = (props) => (
         >
             Checkout
         </NavigationItem>
+        <NavigationItem
+            link="/auth"
+        >
+            Authenticate
+        </NavigationItem>
     </ul>
 )
 
